@@ -1,13 +1,12 @@
+'use client'
 import { useContext } from 'react';
 import ThemeProvider from './ThemeContext';
 import Login from './Login';
-/* import Ejercicio2 from './Ejercicio2';
-import Ejercicio3 from './Ejercicio3';
-import Ejercicio4 from './Ejercicio4';
-import Ejercicio6 from './Ejercicio6';
-import Ejercicio7 from './Ejercicio7';
-import Ejercicio8 from './Ejercicio8';
- */
+import ProductList from './ProductList';
+import Language from './Language';
+import Notificaciones from './Notificaciones';
+import Settings from './Setting';
+import Load from './Load';
 export default function Content() {
     const { theme, toggleTheme } = useContext(ThemeProvider); 
   
@@ -22,6 +21,12 @@ export default function Content() {
       >
         <button onClick={toggleTheme}>Cambiar Tema</button>
         <Login></Login>
+        <Language></Language>
+        <ProductList></ProductList>
+        <Notificaciones></Notificaciones>
+        <Settings></Settings>
+        <Load></Load>
+
         </div>
     );
   }

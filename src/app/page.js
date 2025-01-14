@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div>
       <AuthProvider>
-      <ThemeProvider> 
-       <Content /> 
-      </ThemeProvider>
+        <ThemeProvider> 
+          <Content /> 
+        </ThemeProvider>
       </AuthProvider>
     </div>  
   );

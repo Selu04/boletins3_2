@@ -1,5 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./ThemeContext";
+import { AuthProvider } from "./AuthContext";
+import { LanguageProvider } from "./LanguageContext";
+import { CartProvider } from "./CartContext";
+import { NotificationProvider } from "./NotificationContext";
+import { SettingsProvider } from "./SettingsContext";
+import { LoadingProvider } from "./LoadingContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +27,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <LoadingProvider>
+          <SettingsProvider>
+            <NotificationProvider>
+              <CartProvider>
+                <LanguageProvider> 
+                  <AuthProvider>
+                    <ThemeProvider>{children}</ThemeProvider>
+                  </AuthProvider>
+                </LanguageProvider> 
+              </CartProvider>
+            </NotificationProvider>
+          </SettingsProvider>
+        </LoadingProvider>
       </body>
     </html>
   );
